@@ -10,5 +10,15 @@ def isbullishengulfing(candle1, candle2):
     return False
 
 def isbullishharami(candle1,candle2): 
-    if candle1.getopen() >candle1.getclose() and ca
+    if candle1.getopen() > candle1.getclose() and candle2.getopen() < candle2.getclose():
+        if candle1.getclose() < candle2.getopen() and candle1.getopen() > candle2.getclose():
+            return True
+    return False
+
+def isbearishharami(candle1,candle2):
+    if candle1.getclose() > candle1.getopen() and candle2.getclose() < candle2.getopen():
+        if candle1.getclose() > candle2.getopen() and candle1.getopen() < candle2.getclose():
+            return True
+    return False
+
 
